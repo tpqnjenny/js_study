@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    HTML 내용전달 (구조언어)
+    CSS 모양 (표현언어)
+    Javascript 동적 (동적언어), 이벤트(클릭, 휠, 마우스, 스크롤 등)
+
+    표현식 문장 expression statement : 표현식 값을 만들어내는 것, 하나 이상의 표현식이 모인 것 = 문장
+  -->
+  <h1>식별자</h1>
+  <pre>식별자 = 값을 저장, 이후 재활용 (문자, 배열, 함수, 객체 등)</pre>
+  <pre>
+    숫자 시작 불가
+    특수문자 $ _ 사용 가능
+    예약어 (for foreach var const let break continue 등)
+  </pre>
+  <h1>변수</h1>
+  <pre>
+    var 변수명 = 값; 선언하면서 값을 초기화(할당), 어디에서든 사용 가능, 함수 내에서 지역변수, 호이스팅(끌어올려짐)
+    let 변수명 = 값; 블록범위 지역변수 {}
+    -- 값을 지정 후 변경 가능
+    const 변수명 = 값; const 상수, 변경 불가
+  </pre>
+  <h2>변수 타입</h2>
+  <pre>
+    기본타입: 숫자, 문자, 불리언(참거짓), null, undefined, 원시데이터, 단순화 할 수 없는 값
+    참조타입: 복잡적인 값, 배열, 함수, 정규표현식, 객체 등
+  </pre>
+  <h1>연산자</h1>
+  <h2>산술 연산자</h2>
+  <pre>
+    +, -, *, / 더하기, 빼기, 곱하기, 나누기
+    + 문자 이후에 문ㄴ자 또는 숫자는 이어서 붙여준다
+    % 나누기 연산 후 나머지 값
+    ++ 1씩 증가
+    -- 1씩 감소
+    +=, -+, /=, %= 연산과 동시에 값을 할당
+  </pre>
+  <!-- <button onclick="alert('hello world')">버튼을 눌러보세요.</button> -->
+  <script>
+    var mynum = 60;
+    var str = "javascript"
+    var bool = true;
+    var n = null; // 빈 값
+    var u; // undefined;
+    // 자료형 typeof(대상)
+
+
+    let i = 1;
+    console.log(++i); // 먼저 더하고/
+    console.log(i);
+
+    let x = 1;
+    console.log(x--);
+  </script>
+  <script>
+    /*
+      346, 1+44, "test"
+      345; 1+44; "test";
+      const test = "test";
+      alert("hello world!")
+    */
+    const beta = "beta";
+  </script>
+</body>
+</html>

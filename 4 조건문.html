@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>조건문 if</h1>
+  <pre>
+    if(조건){
+      참일 때 할 일;
+    } else{
+      거짓일 때 할 일
+    }
+    
+    0 : false / 1 : true
+  </pre>
+  <script>
+    var a = 10;
+    var b = 20;
+
+    if(a > b){
+      document.write("a가 b보다 크다.");
+    } else if(a == b){
+      document.write("a는 b와 같다.");
+    } else{
+      document.write("a가 b보다 작다");
+    }
+  </script>
+  <hr>
+  <pre>
+    <
+    >
+    <=
+    >=
+    != 같지 않다면
+    == 같다면
+    === 타입까지 같다면
+    !== 값은 같은데 타입이 다르다면
+  </pre>
+  <hr>
+  <h4>비교연산자 !=</h4>
+  <script>
+    var x = "10";
+    var y = 10;
+    if (x == y){
+      if(x === y){
+        document.write("x와 y는 값고, 타입도 일치한다.")
+      } else{
+        document.write("x와 y의 값은 같으나 타입은 일치하지 않는다.")
+      }
+      
+    }
+    console.log(typeof(x), typeof(y));
+  </script>
+  <hr>
+  <h3>중첩 조건문</h3>
+  <script>
+    var a = 10;
+    var b = 20;
+
+    if (a != b){
+      if(a > b){
+        document.write("a가 b보다 크다.");
+      } else{
+        document.write("a가 b보다 작다.");
+      }
+    } else{
+      document.write("a와 b는 같다.");
+    }
+  </script>
+  <h3>조건문의 축약</h3>
+  <script>
+    var a = 10;
+    var b = 20;
+
+    // if(a > b){
+    //     document.write("a가 b보다 크다.");
+    //   } else{
+    //     document.write("a가 b보다 같거나 작다.");
+    //   }
+    (a > b) ?
+      document.write("a가 b보다 크다.") :
+      document.write("a가 b보다 같거나 작다.");
+    
+  </script>
+  <h3>논리 연산자</h3>
+  <pre>
+    A && B : 모두 참일 때 참 반환
+    A || B : 둘 중 하나라도 참일 떄 참 반환
+  </pre>
+  <script>
+    var a = 10;
+    var b = 20;
+    var c = 30;
+
+    if (a < b && b > c){
+      document.write("a가 b보다 작고, b가 c보다 작다.")
+    }
+    if (a < b || b > c){
+      document.write("a가 b보다 작고, b가 c보다 작다.")
+    }
+  </script>
+  <h3>switch</h3>
+  <pre>
+    switch(조건){
+      case a: 조건의 결과가 a일 때 할 일;
+        break;
+      case b: 조건의 결과가 b일 때 할 일;
+        break;
+    }
+  </pre>
+  <script>
+    var num = prompt("숫자를 입력해 주세요.", 0);
+
+    switch(num % 2){
+      case 0:
+        alert("짝수");
+        break;
+      case 1:
+        alert("홀수");
+        break;
+      default:
+        alert("숫자가 아님!");
+        break;
+    }
+  </script>
+</body>
+</html>

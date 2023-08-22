@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ECMAScript 6</h1>
+    <h2>Template Literal</h2>
+    <script>
+      var str1 = "javascript ";
+      var str2 = "기초";
+      var num1 = 10;
+      var num2 = 20;
+      var msg = `여러분은 지금 ${str1 + str2}를 학습하고 있습니다.`
+      // == var msg = "여러분은 지금 " + str1 + str2 + "를 학습하고 있습니다.";
+      // var msg = `여러분은 지금 ${num1 * num2}를 학습하고 있습니다.`
+      document.write(msg);
+    </script>
+    <h2>var vs let</h2>
+    <pre>
+      var: 전역, 지역 상관없이 최종 값으로만 선언, 초기화(재할당) 가능
+      let: 전역, 지역 구분해서 변수 선언하나 초기화(재할당)은 불가능
+    </pre>
+    <script>
+      /*
+      var a = 10;
+      if(true){
+        var a = 2;
+        console.log(a);
+      }
+      console.log(a);
+      */
+      let b = 10;
+      if(true){
+        let b = 2;
+        console.log(b);
+      }
+      console.log(b);
+    </script>
+
+    <h2>const</h2>
+    <pre>
+      const: 불변, 재할당 불가 (변수 안에 있는 객체나 배열은 수정 가능)
+    </pre>
+    <script>
+      // let c = 100;
+      // c = 200;
+      // console.log(c);
+      const c = 100;
+      c = 200;
+    </script>
+    <hr />
+    <h2>const 변수 값의 수정</h2>
+    <script>
+      const student = {
+        eng: 90,
+        kor: 100
+      }
+      student.eng = 95;
+      console.log(student.eng);
+
+      const backend = ['asp', 'php', 'jsp'];
+      backend.pop();
+      console.log(backend);
+    </script>
+    <h2>const 변수 재할당</h2>
+    <script>
+      /*
+      해당 변수는 위에 이미 선언 되었으므로 재할당 불가
+      const student = {
+        math: 80
+      }
+      */
+    </script>
+    <h2>Arrow function 화살표 함수</h2>
+    <script>
+      /*
+      (function(){
+        console.log("즉시 실행 함수 실행됨.");
+      })();
+      */
+      (() => {
+        console.log("즉시 실행 함수 function 생략하여 실행됨.");
+      })();
+    </script>
+    <hr>
+    <script>
+      // 기존 문법
+      function add(a, b){
+        return a+b;
+      }
+
+      document.write(add(10245, 2154) + "<br>");
+
+      // ES6 문법
+      /*
+      var add = (a, b) => {
+        return a+b;
+      }
+      */
+      var add = (a, b) => a+b;
+
+      document.write(add(10, 40) + "<br>");
+
+      // 매개변수가 하나일 때는 괄호 생략 가능
+      /*
+      function multiply(x){
+        return x * 2;
+      }
+      */
+      var multiply = x => x*2;
+
+      document.write(multiply(5) + "<br>");
+    </script>
+    <h2>Spread Operator 전개 연산자</h2>
+    <script>
+      var arr1 = ["one", "two"];
+      var arr2 = ["three", "four"];
+
+      // var combined = [arr1[0], arr1[1], arr2[0], arr2[1]];
+      // var combined = arr1.concat(arr2);
+      var combined = [...arr1, ...arr2];
+      document.write(combined);
+    </script>
+    <hr>
+    <script>
+      var obj1 = {
+        one: 1,
+        two: 2,
+        other: 0
+      };
+      var obj2 = {
+        three: 3,
+        four: 4,
+        other: -1
+      };
+      /*
+      var combinedObj = {
+        one: obj1.one,
+        two: obj1.two,
+        three: obj2.three,
+        four: obj2.four,
+      }
+      */
+     var combinedObj = {
+      ...obj1,
+      ...obj2
+     }
+      console.log(combinedObj);
+    </script>
+  </body>
+</html>

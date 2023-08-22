@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Selector</h1>
+  <h2 id="sub_title">태그 선택자</h2>
+  <h2>아이디 선택자</h2>
+  <h3>DOM : Document Object Model</h3>
+  <div class="container">
+    <ul id="list1" class="list">
+      <li>list 1</li>
+      <li>list 2</li>
+      <li>list 3</li>
+      <li>list 4</li>
+      <li>list 5</li>
+    </ul>
+  </div>
+  <div class="container">
+    <ul id="list2" class="list">
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+    </ul>
+  </div>
+  <div class="container">
+    <ul id="list3" class="list">
+        <li class="red" name="red">list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+        <li>list item 6</li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <div id="box">
+      box level 1
+      <div>
+        box level 2
+        <div>
+            box level 3
+        </div>
+      </div>
+    </div>
+  </div>
+  <article>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil id, corporis, blanditiis quam dicta amet
+        quidem
+        eum impedit harum consequuntur aspernatur ratione nostrum vel culpa fuga! Dolore quibusdam nisi temporibus!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil id, corporis, blanditiis quam dicta amet
+        quidem
+        eum impedit harum consequuntur aspernatur ratione nostrum vel culpa fuga! Dolore quibusdam nisi temporibus!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil id, corporis, blanditiis quam dicta amet
+        quidem
+        eum impedit harum consequuntur aspernatur ratione nostrum vel culpa fuga! Dolore quibusdam nisi temporibus!
+    </p>
+  </article>
+  <script>
+    console.log(document);
+    // tag 이름으로 요소 선택
+
+    // 태그명
+    var title = document.getElementsByTagName("h1"); // Elements(복수형), 유사 배열
+    // 스타일 변경 : 대상.style.css속성명 = 값
+    console.log(title);
+    title[0].style.color = "green";
+    // 태그명으로 가져오면 해당 모든 태그를 배열로 가져오므로 index 번호를 입력해줘야 함.
+
+    // 아이디명
+    var subTT = document.getElementById("sub_title"); // Element(단수형), 단일 요소
+    console.log(subTT);
+    subTT.style.color = "blue";
+
+    // 클래스명
+    var list = document.getElementsByClassName("list"); // Elements(복수형), 유사 배열
+    console.log(list);
+    list[0].style.color = "violet";
+
+    // css 선택자
+    // 대상{text-decoration: underline;} >> 하이픈(-) 삭제, 뒷 단어 대문자로 시작
+    var myList = document.querySelector("#list3 .red"); // 단일 요소
+    var myList2 = document.querySelectorAll("#list3 .red"); // 유사 배열
+    console.log(myList, myList2);
+    myList.style.color = "red";
+    myList2[0].style.textDecoration = "underline";
+
+    var myBox = document.querySelector("#box > div > div");
+    myBox.style.color = "brown";
+
+    var myP = document.getElementsByTagName("p");
+    console.log(myP);
+    // myP[2].style.backgroundColor = "yellowgreen";
+
+    for(let i =0; i < myP.length; i++){
+      myP[i].style.backgroundColor = "yellowgreen";
+    }
+  </script>
+</body>
+</html>

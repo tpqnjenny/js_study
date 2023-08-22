@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>함수</h1>
+  <pre>
+    (입력), 할 일, 출력
+    입력되는 값 = 매개변수 (parameter)
+    전달되는 값 = 인수 (argument)
+  </pre>
+  <h3>일반 함수 : 순서 상관없이 작성해도 재사용이 가능</h3>
+  <script>
+    var sum; // 전역 변수
+
+    function add(a, b){
+      sum = a + b; // 지역 변수
+      // return sum;
+    }
+    var result = add(1838, 12121);
+    document.write(sum);
+  </script>
+  <hr>
+  <h3>익명 함수 : 순서대로 출력되기 때문에 재사용 불가 출력은 최종에 작성</h3>
+  <script>
+    var addNum = function (x,y){
+      var z = x + y;
+      return z;
+    }
+    document.write(addNum(10, 20));
+  </script>
+  <hr>
+  <h3>즉시 실행 함수</h3>
+  <script>
+    /*
+    (function(){
+      // 즉시 실행
+    }());
+    (function(){
+      // 즉시 실행
+    })()
+    */
+   var result = (function(a, b){
+    return a + b;
+   })(15, 20);
+
+   document.write(result);
+  </script>
+  <hr>
+  <h1>Object</h1>
+  <pre>
+    객체 (object) = 변수 (property) + 함수 (method)
+  </pre>
+  <script>
+    // let 이름 = new Object();
+    // var 이름 = {};
+    var s1 = {};
+    // 객체명.property명 = 값;
+    s1.kor = 100;
+    s1.eng = 90;
+    s1.math = 80;
+    console.log(s1);
+    console.log(s1.eng);
+
+    var s2 = {
+      kor: 100,
+      eng: 99,
+      math: 85,
+      total: function(){
+        var sum = this.kor + this.eng + this.math;
+        return sum;
+      }
+    }
+    console.log(s2.total());
+  </script>
+</body>
+</html>

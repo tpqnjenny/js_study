@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>String</h1>
+  <h3>chartAt</h3>
+  <script>
+    var str = "hello world";
+    // 대상.charAt(인덱스번호);
+    document.write(str.charAt(6));
+  </script>
+  <h3>indexOf, Search</h3>
+  <script>
+    // 대상.indexOf("찾을 문자");
+    // 대상.search("찾을 문자");
+    document.write(str.indexOf("world")+"<br>");
+    // 현재 주소 : location.href;
+    console.log(location.href);
+    var currentUrl = location.href;
+    document.write(currentUrl.indexOf("5500"));
+  </script>
+  <h3>concat : 배열 병합 (기존 배열 유지)</h3>
+  <script>
+    var str2 = "welcome universe";
+    // 대상.concat(대상1)
+    var str3 = str.concat(str2);
+    document.write(str3, str);
+  </script>
+  <h3>replace : 배열 대체 (기존 배열 유지)</h3>
+  <script>
+    // 대상.replace("target", "변경할 값");
+    var str4 = str2.replace("welcome", "bye");
+    document.write(str4, str2);
+  </script>
+  <h3>slice : 배열 오려내기 (기존 배열 유지)</h3>
+  <script>
+    // 대상.slice(시작번호, 끝번호) : 끝번호 이전까지 복사
+    var str5 = str2.slice(0, 7);
+    document.write(str5, str2);
+  </script>
+  <h3>split : 문자열을 배열로 분리</h3>
+  <script>
+    var langs = "html-css-javascript"
+    // 대상.split("-");
+    var langArr = langs.split("-");
+    document.write(langArr, langs)
+    console.log(langArr);
+  </script>
+  <h3>length : 문자열의 길이 확인 (공백 포함)</h3>
+  <script>
+    // 대상.length;
+    document.write(str.length);
+  </script>
+</body>
+</html>

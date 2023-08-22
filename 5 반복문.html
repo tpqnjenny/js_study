@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>반복문</h1>
+  <script>
+    var i = 0;
+    document.write(i + "<br>");
+    i += 2;
+    document.write(i + "<br>");
+    i += 2;
+    document.write(i + "<br>");
+    i += 2;
+    document.write(i + "<br>");
+    i += 2;
+    document.write(i + "<br>");
+    i += 2;
+    document.write(i + "<br>");
+  </script>
+  <h3>for</h3>
+  <pre>
+    for(초기문; 조건문; 증감){
+      반복할 코드;
+    }
+  </pre>
+  <script>
+    for(let i = 0; i <= 10; i += 2){
+      document.write(i + "<br>");
+    }
+  </script>
+  <h3>while</h3>
+  <pre>
+    초기문;
+    while(조건문){
+      반복할 코드
+    }
+  </pre>
+  <script>
+    var i = 0;
+    while(i <= 10){
+      document.write(i + "<br>");
+      i += 2;
+    }
+  </script>
+  <h3>do while</h3>
+  <pre>
+    초기문;
+    do{
+      반복할 코드
+      증감
+    }while(조건);
+  </pre>
+  <script>
+    var i = 0;
+    do{
+      document.write(i + "<br>");
+      i += 2;
+    }while(i <= 10)
+  </script>
+  <h3>forEach : 배열에서만 사용 가능</h3>
+  <script>
+    var arr = ["a", "b", "c", "d", "e"];
+    arr.forEach((function(item, index, all){
+      document.write(item + "는 전체 배열 " + all + "에서 " + index + "번째 입니다. <br>")
+    }))
+  </script>
+  <h3>for in</h3>
+  <pre>
+    객체의 값들 반복
+  </pre>
+  <script>
+    var student = {
+      kor: 95,
+      eng: 100,
+      math: 89
+    }
+    for(item in student){
+      document.write(item + " : " + student[item] + " / ");
+    }
+  </script>
+  <h3>for of</h3>
+  <script>
+    var arr = ["a", "b", "c", "d", "e"];
+    for(letter of arr){
+      document.write(letter + " / ");
+    }
+  </script>
+</body>
+</html>

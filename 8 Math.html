@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Math</h1>
+  <h3>
+    abs(절대값) / ceil(무조건 반올림) / floor(무조건 반내림) / round(반올림)
+  </h3>
+  <script>
+    // Math.함수명(값);
+    document.write(Math.abs(-7.5)+"<br>");
+    document.write(Math.ceil(7.1)+"<br>");
+    document.write(Math.floor(7.8)+"<br>");
+    document.write(Math.round(7.5)+"<br>");
+    document.write(Math.round(7.1)+"<br>");
+  </script>
+  <hr>
+  <h3>Math.random : 난수, 랜덤 생성</h3>
+  <script>
+    var ranNum = Math.random()*10;
+    var ranNum2 = (Math.floor(ranNum));
+    var ranNum3 = ranNum2 % 6; // 0~5까지의 랜덤 숫자
+    document.write(ranNum3);
+  </script>
+</body>
+</html>
